@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laosuye.excel.dao.StudentDao">
+
+    <resultMap type="com.laosuye.excel.entity.Student" id="StudentMap">
+        <result property="userId" column="user_id" jdbcType="VARCHAR"/>
+        <result property="userName" column="user_name" jdbcType="VARCHAR"/>
+        <result property="realName" column="real_name" jdbcType="VARCHAR"/>
+        <result property="sex" column="sex" jdbcType="VARCHAR"/>
+        <result property="phone" column="phone" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!-- 批量插入 -->
+    <insert id="insertBatch" keyProperty="" useGeneratedKeys="true">
+        insert into myStudy.student(user_iduser_namereal_namesexphone)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.userId}#{entity.userName}#{entity.realName}#{entity.sex}#{entity.phone})
+        </foreach>
+    </insert>
+    <!-- 批量插入或按主键更新 -->
+    <insert id="insertOrUpdateBatch" keyProperty="" useGeneratedKeys="true">
+        insert into myStudy.student(user_iduser_namereal_namesexphone)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.userId}#{entity.userName}#{entity.realName}#{entity.sex}#{entity.phone})
+        </foreach>
+        on duplicate key update
+        user_id = values(user_id) user_name = values(user_name) real_name = values(real_name) sex = values(sex) phone =
+        values(phone)
+    </insert>
+
+</mapper>
+
