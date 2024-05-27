@@ -11,6 +11,6 @@ import com.laosuye.excel.entity.UserAppRelation;
  * @author laosuye
  * @since 2024-05-25
  */
-public interface UserAppRelationMapper extends BaseMapper<UserAppRelation> {
+public interface UserAppRelationDao extends BaseMapper<UserAppRelation> {
 
 }

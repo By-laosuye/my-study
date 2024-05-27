@@ -12,6 +12,6 @@ import com.laosuye.excel.entity.User;
  * @author laosuye
  * @since 2024-05-24
  */
-public interface UserMapper extends BaseMapper<User> {
+public interface UserDao extends BaseMapper<User> {
 
 }

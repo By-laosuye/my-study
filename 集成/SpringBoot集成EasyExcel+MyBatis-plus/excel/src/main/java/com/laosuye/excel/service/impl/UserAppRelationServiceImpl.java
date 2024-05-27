@@ -3,7 +3,7 @@ package com.laosuye.excel.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.laosuye.excel.entity.UserAppRelation;
-import com.laosuye.excel.dao.UserAppRelationMapper;
+import com.laosuye.excel.dao.UserAppRelationDao;
 import com.laosuye.excel.service.IUserAppRelationService;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +16,6 @@ import org.springframework.stereotype.Service;
  * @since 2024-05-25
  */
 @Service
-public class UserAppRelationServiceImpl extends ServiceImpl<UserAppRelationMapper, UserAppRelation> implements IUserAppRelationService {
+public class UserAppRelationServiceImpl extends ServiceImpl<UserAppRelationDao, UserAppRelation> implements IUserAppRelationService {
 
 }
